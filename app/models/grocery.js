@@ -4,6 +4,6 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   quantity: DS.attr('string'),
   notes: DS.attr('string'),
-  starred: DS.attr('boolean'),
-  purchased: DS.attr('boolean')
+  starred: DS.attr('boolean', { defaultValue: false }),
+  purchased: DS.attr('boolean', { defaultValue: false })
 });

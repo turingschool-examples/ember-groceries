@@ -1,0 +1,18 @@
+<h2>New Grocery</h2>
+
+<form {{action 'createGrocery'}}>
+  <label>
+    Name
+    {{input value=name}}
+  </label>
+  <label>
+    Quantity
+    {{input value=quantity}}
+  </label>
+  <label>
+    Notes
+    {{textarea value=notes}}
+  </label>
+  <button>Submit</button>
+</form>
+

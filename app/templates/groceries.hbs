@@ -1,1 +1,9 @@
+{{add-grocery}}
+
+<div class="groceries">
+  {{#each model as |grocery|}}
+    {{grocery.name}}
+  {{/each}}
+</div>
+
 {{outlet}}

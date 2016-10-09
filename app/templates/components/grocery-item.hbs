@@ -8,6 +8,11 @@
   <p>{{grocery.notes}}</p>
 {{/if}}
 
-<button>Purchase</button>
-<button>Star</button>
+<ul>
+  <li>Purchased: {{grocery.purchased}}</li>
+  <li>Starred: {{grocery.starred}}</li>
+</ul>
+
+<button {{action 'purchase'}}>Purchase</button>
+<button {{action 'star'}}>Star</button>
 <button {{action 'remove'}}>Remove</button>

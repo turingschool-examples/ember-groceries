@@ -1,7 +1,14 @@
 {{add-grocery}}
 
+<div class="groceries--filters">
+  <button {{action 'setFilter' null}}>Show All</button>
+  <button {{action 'setFilter' 'starred'}}>Show Starred</button>
+  <button {{action 'setFilter' 'purchased'}}>Show Purchased</button>
+  <button {{action 'setFilter' 'unpurchased'}}>Show Unpurchased</button>
+</div>
+
 <div class="groceries">
-  {{#each model as |grocery|}}
+  {{#each groceries as |grocery|}}
     {{grocery-item grocery=grocery}}
   {{/each}}
 </div>

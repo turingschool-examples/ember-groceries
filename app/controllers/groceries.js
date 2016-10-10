@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ['filter'],
+  queryParams: ['filter', 'search'],
 
   filter: null,
-  searchString: null,
+  search: null,
 
-  groceries: Ember.computed('filter', 'searchString', function() {
+  groceries: Ember.computed('filter', 'search', function() {
     const filter = this.get('filter');
-    const searchString = this.get('searchString');
+    const search = this.get('search');
 
     let groceries = this.get('model');
 
@@ -16,12 +16,11 @@ export default Ember.Controller.extend({
       groceries = groceries.filterBy(filter, true);
     }
 
-    if (searchString) {
+    if (search) {
       groceries = groceries.filter(grocery => {
-        const term = searchString.toLowerCase();
         return grocery.get('name')
                       .toLowerCase()
-                      .match(term);
+                      .match(search);
       });
     }
 
@@ -31,6 +30,9 @@ export default Ember.Controller.extend({
   actions: {
     setFilter(filter) {
       this.set('filter', filter);
+    },
+    updateSearch(search) {
+      this.set('search', search && search.toLowerCase());
     }
   }
 });

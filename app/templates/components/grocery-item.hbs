@@ -9,12 +9,18 @@
 {{/if}}
 
 <ul class="grocery-item--flags">
-  <li class="grocery-item--flags">Purchased: {{grocery.purchased}}</li>
-  <li class="grocery-item--flags">Starred: {{grocery.starred}}</li>
+  <li class="grocery-item--flag">{{if grocery.purchased "Purchased" "Unpurchased"}}</li>
+  {{#if grocery.starred}}
+    <li class="grocery-item--flag">Starred</li>
+  {{/if}}
 </ul>
 
 <div class="grocery-item--buttons">
-  <button {{action 'purchase'}}>Purchase</button>
-  <button {{action 'star'}}>Star</button>
+  <button {{action 'purchase'}}>
+    {{if grocery.purchased "Unpurchase" "Purchase"}}
+  </button>
+  <button {{action 'star'}}>
+    {{if grocery.starred "Unstar" "Star"}}
+  </button>
   <button {{action 'remove'}}>Remove</button>
 </div>

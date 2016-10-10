@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
   filter: null,
   search: null,
 
+  filterIsAll: Ember.computed.not('filter'),
+  filterIsStarred: Ember.computed.equal('filter', 'starred'),
+  filterIsPurchased: Ember.computed.equal('filter', 'purchased'),
+  filterIsUnpurchased: Ember.computed.equal('filter', 'unpurchased'),
+
   groceries: Ember.computed('filter', 'search', function() {
     const filter = this.get('filter');
     const search = this.get('search');

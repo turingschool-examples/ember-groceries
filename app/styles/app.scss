@@ -1,0 +1,84 @@
+$input-color: #CDF3C5;
+$button-color: #B9DEB2;
+$border-color: #F3EBC5;
+$accent-color: #B9DEB2;
+
+html, body, * {
+  box-sizing: border-box;
+}
+
+body {
+  font: menu;
+  color: #111111;
+}
+
+.application {
+  margin: auto;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  &:not(:last-child) {
+    margin: 1em 0;
+  }
+  input, textarea {
+    display: block;
+    min-width: 100%;
+    border: none;
+    padding: 1em;
+    background-color: $input-color;
+  }
+}
+
+button {
+  background-color: $button-color;
+  border: 1px solid darken($button-color, 20);
+  outline: none;
+  &:hover {
+    background-color: lighten($button-color, 20);
+  }
+  &:focus {
+    border-color: lighten($button-color, 20);
+  }
+  &:active, &.active {
+    background-color: complement($button-color);
+  }
+  &:disabled {
+    background-color: lighten($button-color, 40);
+  }
+}
+
+.add-grocery {
+  padding: 0.5em;
+  background-color: $accent-color;
+  border: 1px solid darken($accent-color, 10);
+}
+
+.groceries--search {
+  margin: 1em 0;
+}
+
+.groceries--filters {
+  padding: 1em 0;
+  margin: 1em 0;
+}
+
+.grocery-item {
+  border: 1px solid #999;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.grocery-item--flags {
+  padding-left: 0;
+  list-style: none;
+  li {
+    font-size: 0.8em;
+    background-color: $accent-color;
+    padding: 0.5em;
+    border: 1px solid darken($accent-color, 10);
+    border-radius: 10px;
+    display: inline-block;
+  }
+}

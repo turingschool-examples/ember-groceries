@@ -8,10 +8,18 @@
 </div>
 
 <div class="groceries--filters">
-  <button {{action 'setFilter' null}}>Show All</button>
-  <button {{action 'setFilter' 'starred'}}>Show Starred</button>
-  <button {{action 'setFilter' 'purchased'}}>Show Purchased</button>
-  <button {{action 'setFilter' 'unpurchased'}}>Show Unpurchased</button>
+  <button {{action 'setFilter' null}} class="groceries--filter {{if filterIsAll "active"}}">
+    Show All
+  </button>
+  <button {{action 'setFilter' 'starred'}} class="groceries--filter {{if filterIsStarred "active"}}">
+    Show Starred
+  </button>
+  <button {{action 'setFilter' 'purchased'}} class="groceries--filter {{if filterIsPurchased "active"}}">
+    Show Purchased
+  </button>
+  <button {{action 'setFilter' 'unpurchased'}} class="groceries--filter {{if filterIsUnpurchased "active"}}">
+    Show Unpurchased
+  </button>
 </div>
 
 <div class="groceries">

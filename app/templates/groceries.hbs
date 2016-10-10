@@ -1,5 +1,12 @@
 {{add-grocery}}
 
+<div class="groceries--search">
+  <label>
+  Search
+  {{input value=searchString}}
+  </label>
+</div>
+
 <div class="groceries--filters">
   <button {{action 'setFilter' null}}>Show All</button>
   <button {{action 'setFilter' 'starred'}}>Show Starred</button>

@@ -2,15 +2,30 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: ['filter'],
+
   filter: null,
+  searchString: null,
 
-  groceries: Ember.computed('filter', function() {
+  groceries: Ember.computed('filter', 'searchString', function() {
     const filter = this.get('filter');
-    const groceries = this.get('model');
+    const searchString = this.get('searchString');
 
-    if (!filter) { return groceries; }
-    return groceries.filterBy(filter, true);
+    let groceries = this.get('model');
 
+    if (filter) {
+      groceries = groceries.filterBy(filter, true);
+    }
+
+    if (searchString) {
+      groceries = groceries.filter(grocery => {
+        const term = searchString.toLowerCase();
+        return grocery.get('name')
+                      .toLowerCase()
+                      .match(term);
+      });
+    }
+
+    return groceries;
   }),
 
   actions: {

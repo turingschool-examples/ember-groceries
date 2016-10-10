@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'article',
+  classNames: ['grocery-item'],
+
   actions: {
     purchase() {
       const purchased = this.get('grocery.purchased');

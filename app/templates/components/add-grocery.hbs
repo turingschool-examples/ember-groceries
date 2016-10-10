@@ -1,6 +1,6 @@
 <h2>New Grocery</h2>
 
-<form {{action 'createGrocery'}}>
+<form class="add-grocery--form" {{action 'createGrocery'}}>
   <label>
     Name
     {{input value=name}}
@@ -13,6 +13,6 @@
     Notes
     {{textarea value=notes}}
   </label>
-  <button>Submit</button>
+  <button class="add-grocery--submit">Submit</button>
 </form>
 

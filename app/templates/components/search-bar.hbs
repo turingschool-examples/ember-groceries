@@ -1,0 +1,16 @@
+<div class="groceries--search">
+  <label>
+    Search
+    {{input value=value key-press=(action searchUpdated value)}}
+
+    {{! The action helper will either 1) invoke the un-quoted function with the
+    arguments passed, or 2) pass the quoted string to the associated actions hash.}}
+
+    {{! The method above illustrates the first type.}}
+
+    {{! The method below illustrates the second type ofclosure actions, but is
+    not necessary here, see the associated action in components/search-bar.js}}
+
+    {{!input value=value key-press="searchFieldUpdated"}}
+  </label>
+</div>

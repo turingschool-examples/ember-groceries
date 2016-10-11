@@ -1,11 +1,6 @@
 {{add-grocery}}
 
-<div class="groceries--search">
-  <label>
-  Search
-  {{input value=search key-press="updateSearch"}}
-  </label>
-</div>
+{{search-bar value=search searchUpdated=(action "updateSearch")}}
 
 <div class="groceries--filters">
   <button {{action 'setFilter' null}} class="groceries--filter {{if filterIsAll "active"}}">

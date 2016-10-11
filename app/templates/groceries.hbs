@@ -1,25 +1,23 @@
 {{add-grocery}}
 
-<div class="groceries--search">
-  <label>
-  Search
-  {{input value=search key-press="updateSearch"}}
-  </label>
-</div>
+{{search-bar value=search searchUpdated=(action "updateSearch")}}
 
 <div class="groceries--filters">
-  <button {{action 'setFilter' null}} class="groceries--filter {{if filterIsAll "active"}}">
+  {{#filter-button setAction=(action 'setFilter' null) active=filterIsAll}}
     Show All
-  </button>
-  <button {{action 'setFilter' 'starred'}} class="groceries--filter {{if filterIsStarred "active"}}">
+  {{/filter-button}}
+
+  {{#filter-button setAction=(action 'setFilter' 'starred') active=filterIsStarred}}
     Show Starred
-  </button>
-  <button {{action 'setFilter' 'purchased'}} class="groceries--filter {{if filterIsPurchased "active"}}">
+  {{/filter-button}}
+
+  {{#filter-button setAction=(action 'setFilter' 'purchased') active=filterIsPurchased}}
     Show Purchased
-  </button>
-  <button {{action 'setFilter' 'unpurchased'}} class="groceries--filter {{if filterIsUnpurchased "active"}}">
+  {{/filter-button}}
+
+  {{#filter-button setAction=(action 'setFilter' 'unpurchased') active=filterIsUnpurchased}}
     Show Unpurchased
-  </button>
+  {{/filter-button}}
 </div>
 
 <div class="groceries">

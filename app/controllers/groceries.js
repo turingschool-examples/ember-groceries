@@ -11,6 +11,10 @@ export default Ember.Controller.extend({
   filterIsPurchased: Ember.computed.equal('filter', 'purchased'),
   filterIsUnpurchased: Ember.computed.equal('filter', 'unpurchased'),
 
+  // Exercise for the reader: Why doesn't the list update when you change the
+  // list item's status from "purchased" to "unpurchased", etc.?
+  //
+  // How can we fix this?
   groceries: Ember.computed('filter', 'search', function() {
     const filter = this.get('filter');
     const search = this.get('search');

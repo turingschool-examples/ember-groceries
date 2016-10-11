@@ -1,6 +1,6 @@
 <h2>New Grocery</h2>
 
-<form class="add-grocery--form" {{action 'createGrocery'}}>
+<form class="add-grocery--form" {{action 'createGrocery' on="submit"}}>
   <label>
     Name
     {{input value=name}}

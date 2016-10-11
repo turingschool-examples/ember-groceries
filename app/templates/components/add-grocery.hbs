@@ -3,16 +3,15 @@
 <form class="add-grocery--form" {{action 'createGrocery' on="submit"}}>
   <label>
     Name
-    {{input value=name}}
+    {{input class="spec-input-name" value=name}}
   </label>
   <label>
     Quantity
-    {{input value=quantity}}
+    {{input class="spec-input-quantity" value=quantity}}
   </label>
   <label>
     Notes
-    {{textarea value=notes}}
+    {{textarea class="spec-textarea-notes" value=notes}}
   </label>
   <button class="add-grocery--submit">Submit</button>
 </form>
-

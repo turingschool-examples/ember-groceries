@@ -16,23 +16,9 @@ test('should return undefined without valid input', function(assert) {
 })
 
 
-test('should return default values for starred and purchased', function(assert) {
-  const grocery = this.subject({
-    name: 'grocery-name',
-    quantity: 'one bunch',
-    notes: ''
-  });
-
-
-  assert.equal(grocery.get('purchased'), false, 'grocery defaults to purchased: false');
-  assert.equal(grocery.get('starred'), false, 'grocery defaults to starred: false');
+skip('should return default values for starred and purchased', function(assert) {
 });
 
 
-test('unpurchased should return the opposite of purchased', function(assert) {
-  const grocery = this.subject()
-
-  assert.equal(grocery.get('purchased'), false, 'grocery defaults to purchased: false')
-
-  assert.equal(grocery.get('unpurchased'), true)
+skip('unpurchased should return the opposite of purchased', function(assert) {
 })

@@ -20,57 +20,11 @@ skip('should update filter property on appropriate actions', function(assert) {
   assert.equal(ctrl.get('filter'), 'starred', 'filter updated to starred')
 })
 
-skip('should update search properties on action', function(assert){
+skip('should update search properties on appropriate action action', function(assert){
 })
 
-test('should return only starred groceries when filter is applied', function(assert){
-  const ctrl = this.subject()
-  const groceryList = [
-    Ember.Object.create({
-      name: 'grocery-name',
-      quantity: 'one bunch',
-      notes: '',
-      starred: false
-    }),
-    Ember.Object.create({
-      name: 'grocery-name-2',
-      quantity: 'one bunch',
-      notes: '',
-      starred: true
-    })
-  ]
-
-  ctrl.set('model', groceryList)
-
-  assert.equal(ctrl.get('groceries').length, 2, 'starts with two groceries')
-
-  ctrl.set('filter', 'starred')
-  assert.equal(ctrl.get('filter'), 'starred', 'filter updated to starred')
-  assert.equal(ctrl.get('groceries').length, 1, 'filters to one grocery item with starred prop')
+skip('should return only starred groceries when filter is applied', function(assert){
 })
 
-test('should return only groceries with search term', function(assert){
-  const ctrl = this.subject()
-  const groceryList = [
-    Ember.Object.create({
-      name: 'meat',
-      quantity: 'lion',
-      notes: '',
-      starred: false
-    }),
-    Ember.Object.create({
-      name: 'flowers',
-      quantity: 'one bunch',
-      notes: '',
-      starred: true
-    })
-  ]
-
-  ctrl.set('model', groceryList)
-
-  assert.equal(ctrl.get('groceries').length, 2, 'starts with two groceries')
-
-  ctrl.set('search', 'meat')
-  assert.equal(ctrl.get('groceries').length, 1, 'filters to one grocery item with search value')
-
+skip('should return only groceries with search term', function(assert){
 })

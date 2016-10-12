@@ -3,7 +3,7 @@ import moduleForAcceptance from 'ember-groceries/tests/helpers/module-for-accept
 
 moduleForAcceptance('Acceptance | add grocery');
 
-skip('should add a grocery on submit with valid input', function(assert) {
+test('should add a grocery on submit with valid input', function(assert) {
   visit('/');
   fillIn('.spec-input-name', 'Banana')
   fillIn('.spec-input-quantity', 'One Bunch')

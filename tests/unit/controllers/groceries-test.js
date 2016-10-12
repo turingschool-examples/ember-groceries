@@ -3,7 +3,7 @@ import { moduleFor, test, skip } from 'ember-qunit';
 moduleFor('controller:groceries', 'Unit | Controller | groceries', {
 });
 
-test('it exists', function(assert) {
+skip('it exists', function(assert) {
   let controller = this.subject();
   assert.ok(controller);
 });
@@ -26,18 +26,18 @@ skip('should update search properties on action', function(assert){
 test('should return only starred groceries when filter is applied', function(assert){
   const ctrl = this.subject()
   const groceryList = [
-    {
+    Ember.Object.create({
       name: 'grocery-name',
       quantity: 'one bunch',
       notes: '',
       starred: false
-    },
-    {
+    }),
+    Ember.Object.create({
       name: 'grocery-name-2',
       quantity: 'one bunch',
       notes: '',
       starred: true
-    }
+    })
   ]
 
   ctrl.set('model', groceryList)
@@ -52,18 +52,18 @@ test('should return only starred groceries when filter is applied', function(ass
 test('should return only groceries with search term', function(assert){
   const ctrl = this.subject()
   const groceryList = [
-    {
+    Ember.Object.create({
       name: 'meat',
       quantity: 'lion',
       notes: '',
       starred: false
-    },
-    {
+    }),
+    Ember.Object.create({
       name: 'flowers',
       quantity: 'one bunch',
       notes: '',
       starred: true
-    }
+    })
   ]
 
   ctrl.set('model', groceryList)

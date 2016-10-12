@@ -1,7 +1,11 @@
 import { test, skip } from 'qunit';
 import moduleForAcceptance from 'ember-groceries/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | add grocery');
+moduleForAcceptance('Acceptance | add grocery'), {
+  afterEach: function() {
+    window.localStorage.clear()
+  }
+};
 
 test('should add a grocery on submit with valid input', function(assert) {
   visit('/');
@@ -15,6 +19,8 @@ test('should add a grocery on submit with valid input', function(assert) {
     assert.equal(find('.grocery-item').length, 1, 'should show 1 grocery')
     assert.equal(find('h3').text(), 'Banana', 'should list grocery name')
   });
+
+
 });
 
 skip('should remove grocery when user clicks remove', function(assert) {

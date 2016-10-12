@@ -1,4 +1,4 @@
-import { moduleForModel, test } from 'ember-qunit';
+import { moduleForModel, test, skip } from 'ember-qunit';
 
 moduleForModel('grocery', 'Unit | Model | grocery', {
   needs: []

@@ -8,16 +8,23 @@ moduleForAcceptance('Acceptance | add grocery'), {
 };
 
 test('should add a grocery on submit with valid input', function(assert) {
+  // when I visit the root page
   visit('/');
+
+  // and I enter values for name, quantity, and notes
   fillIn('.spec-input-name', 'Banana')
   fillIn('.spec-input-quantity', 'One Bunch')
   fillIn('.spec-textarea-notes', 'Only extra green ones')
+
+  // and I click submit
   click('.add-grocery--submit')
 
+  // then I expect to see a grocery item with those values
   andThen(function() {
     assert.equal(currentURL(), '/');
     assert.equal(find('.grocery-item').length, 1, 'should show 1 grocery')
     assert.equal(find('h3').text(), 'Banana', 'should list grocery name')
+    // you would continue to check the quantity and notes html elements here as well for a thoroughly robust test
   });
 
 

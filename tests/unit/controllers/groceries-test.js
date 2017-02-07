@@ -3,7 +3,7 @@ import { moduleFor, test, skip } from 'ember-qunit';
 moduleFor('controller:groceries', 'Unit | Controller | groceries', {
 });
 
-skip('it exists', function(assert) {
+test('it exists', function(assert) {
   let controller = this.subject();
   assert.ok(controller);
 });

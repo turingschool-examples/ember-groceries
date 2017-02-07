@@ -1,13 +1,13 @@
 import { test, skip } from 'qunit';
 import moduleForAcceptance from 'ember-groceries/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | add grocery'), {
+moduleForAcceptance('Acceptance | add grocery', {
   afterEach: function() {
     window.localStorage.clear()
   }
-};
+});
 
-test('should add a grocery on submit with valid input', function(assert) {
+skip('should add a grocery on submit with valid input', function(assert) {
   // when I visit the root page
   visit('/');
 

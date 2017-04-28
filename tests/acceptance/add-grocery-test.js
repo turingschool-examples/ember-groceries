@@ -1,13 +1,10 @@
 import { test, skip } from 'qunit';
 import moduleForAcceptance from 'ember-groceries/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | add grocery'), {
-  afterEach: function() {
-    window.localStorage.clear()
-  }
-};
+moduleForAcceptance('Acceptance | add grocery', {});
 
 test('should add a grocery on submit with valid input', function(assert) {
+  window.localStorage.clear()
   // when I visit the root page
   visit('/');
 
@@ -30,20 +27,33 @@ test('should add a grocery on submit with valid input', function(assert) {
 
 });
 
-skip('should remove grocery when user clicks remove', function(assert) {
+test('should remove grocery when user clicks remove', function(assert) {
+  window.localStorage.clear()
   // When a user visits '/'
+  visit('/')
 
   // And fills in the form
+  fillIn('.spec-input-name', 'banana')
+  fillIn('.spec-input-quantity', 'seven bunches')
+  fillIn('.spec-textarea-notes', 'a lot of them')
 
   // And clicks submit
+  click('.add-grocery--submit')
 
   // Then there is a grocery item displayed
+  andThen(function() {
+    assert.equal(find('.grocery-item').length, 1, 'shows one item')
+  })
 
   // And it has the expected values
 
   // And when a user clicks "Remove"
+  click('.remove-button')
 
   // Then there is no longer a grocery item displayed
+  andThen(function() {
+    assert.equal(find('.grocery-item').length, 0, 'shows zero items')
+  })
 })
 
 skip('should toggle purchased status when user clicks on purchase', function(assert) {

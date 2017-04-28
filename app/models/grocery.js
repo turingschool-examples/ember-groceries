@@ -10,4 +10,5 @@ export default DS.Model.extend({
   unpurchased: Ember.computed('purchased', function() {
     return !this.get('purchased');
   })
+
 });
